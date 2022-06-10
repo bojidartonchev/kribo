@@ -1,0 +1,5 @@
+{
+  "@@locale": "en",
+
+  "weather_degrees_format": "{degrees}°C"
+}

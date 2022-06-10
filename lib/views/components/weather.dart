@@ -62,10 +62,10 @@ class _WeatherComponentState extends State<WeatherComponent> {
           Row(
             children: [
               Image.network('https://openweathermap.org/img/w/${_weather!.weatherIcon!}.png'),
-              Text(S.of(context).weather_degrees_format(degrees), style: const TextStyle(color: Colors.white, fontSize: 50))
+              Text(S.of(context).weather_degrees_format(degrees), style: const TextStyle(fontSize: 50))
             ],
           ),
-          Text(_weather!.areaName!, style: const TextStyle(color: Colors.white, fontSize: 30)),
+          Text(_weather!.areaName!, style: const TextStyle(fontSize: 30)),
         ],
       )
     );

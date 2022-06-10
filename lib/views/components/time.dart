@@ -47,8 +47,8 @@ class _TimeComponentState extends State<TimeComponent> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(formattedDate, style: const TextStyle(color: Colors.white, fontSize: 30)),
-          Text(formattedTime, style: const TextStyle(color: Colors.white, fontSize: 50))
+          Text(formattedDate, style: const TextStyle(fontSize: 30)),
+          Text(formattedTime, style: const TextStyle(fontSize: 50))
         ],
       ),
     );

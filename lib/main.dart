@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kribo/generated/l10n.dart';
-import 'package:kribo/themes/dark.dart';
-import 'package:kribo/themes/light.dart';
+import 'package:kribo/themes/kribo.dart';
 import 'package:kribo/views/dashboard.dart';
 
 void main() {
@@ -35,8 +34,7 @@ class _AppState extends State<App> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      theme: LightTheme.theme,
-      darkTheme: DarkTheme.theme,
+      theme: KriboTheme.theme,
       themeMode: ThemeMode.dark,
       home: const DashboardView(),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kribo/views/components/news.dart';
 import 'package:kribo/views/components/time.dart';
 import 'package:kribo/views/components/weather.dart';
 
@@ -14,6 +15,7 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,7 +23,9 @@ class _DashboardViewState extends State<DashboardView> {
               TimeComponent(),
               WeatherComponent(),
             ],
-          )
+          ),
+          const Spacer(),
+          const NewsComponent()
         ],
       ),
     );

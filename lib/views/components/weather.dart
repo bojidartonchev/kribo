@@ -23,7 +23,7 @@ class _WeatherComponentState extends State<WeatherComponent> {
     _weatherFactory = WeatherFactory('a45ad855438bc1581727288bc93a611b');
 
     _timer = Timer.periodic(
-      const Duration(seconds: 1),
+      const Duration(minutes: 1),
           (Timer t) => _requestWeather,
     );
 
@@ -53,7 +53,7 @@ class _WeatherComponentState extends State<WeatherComponent> {
     }
 
     var degrees = (_weather!.temperature!.celsius! + 0.5).toInt();
-    
+
     return Padding(
       padding: const EdgeInsets.all(50),
       child: Column(
@@ -62,7 +62,7 @@ class _WeatherComponentState extends State<WeatherComponent> {
           Row(
             children: [
               Image.network('https://openweathermap.org/img/w/${_weather!.weatherIcon!}.png'),
-              Text(S.of(context).weather_degrees_format(degrees), style: const TextStyle(fontSize: 50))
+              Text(S.of(context).weather_degrees_format(degrees), style: const TextStyle(fontSize: 60))
             ],
           ),
           Text(_weather!.areaName!, style: const TextStyle(fontSize: 30)),

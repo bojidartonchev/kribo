@@ -12,7 +12,7 @@ class TimeComponent extends StatefulWidget {
 
 class _TimeComponentState extends State<TimeComponent> {
   late Timer _timer;
-  DateTime? _now;
+  late DateTime _now;
 
   @override
   void initState() {
@@ -22,6 +22,8 @@ class _TimeComponentState extends State<TimeComponent> {
             _now = DateTime.now();
       }),
     );
+
+    _now = DateTime.now();
 
     super.initState();
   }
@@ -35,12 +37,8 @@ class _TimeComponentState extends State<TimeComponent> {
 
   @override
   Widget build(BuildContext context) {
-    if(_now == null){
-      return const SizedBox();
-    }
-
-    String formattedDate = DateFormat('EEEE, MMMM dd, yyyy').format(_now!);
-    String formattedTime = DateFormat('HH:mm:ss').format(_now!);
+    String formattedDate = DateFormat('EEEE, MMMM dd, yyyy').format(_now);
+    String formattedTime = DateFormat('HH:mm').format(_now);
 
     return Padding(
       padding: const EdgeInsets.all(50),
@@ -48,8 +46,19 @@ class _TimeComponentState extends State<TimeComponent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(formattedDate, style: const TextStyle(fontSize: 30)),
-          Text(formattedTime, style: const TextStyle(fontSize: 50))
-        ],
+          RichText(
+              text: TextSpan(
+                text: formattedTime,
+                style: const TextStyle(fontSize: 60),
+                children: <InlineSpan>[
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.top,
+                  child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 13),
+                      child: Text(_now.second.toString().padLeft(2, '0'), style: const TextStyle(fontSize: 30)))),
+                ],
+              )),
+        ]
       ),
     );
   }

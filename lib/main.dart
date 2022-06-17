@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kribo/generated/l10n.dart';
-import 'package:kribo/managers/http_manager.dart';
 import 'package:kribo/themes/dark.dart';
 import 'package:kribo/themes/light.dart';
 import 'package:kribo/views/dashboard.dart';
@@ -25,14 +24,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  @override
-  void initState() {
-    //Init http manager
-    HttpManager().init();
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

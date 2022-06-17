@@ -70,6 +70,7 @@ class _NewsComponentState extends State<NewsComponent> {
 
   Widget _buildAnimatedSwitcher() {
     var article = _news![_currentIdx];
+    var screenDim = MediaQuery.of(context).size;
 
     return AnimatedSwitcher(
         transitionBuilder: (Widget child, Animation<double> animation) =>
@@ -85,11 +86,12 @@ class _NewsComponentState extends State<NewsComponent> {
         duration: const Duration(seconds: 3),
         child: Padding(
           key: Key(_currentIdx.toString()),
-          padding: const EdgeInsets.symmetric(horizontal: 300, vertical: 100),
+          padding: EdgeInsets.symmetric(horizontal: screenDim.width * 0.1, vertical: screenDim.height * 0.1),
           child: Text(
-            article.title!,
+            '${article.title!}\n',
             style: const TextStyle(fontSize: 30),
-            maxLines: 1,
+            textAlign: TextAlign.center,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
         )

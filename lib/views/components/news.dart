@@ -24,7 +24,7 @@ class _NewsComponentState extends State<NewsComponent> {
     _newsApi = NewsAPI('f91474c1a8554714b281e0681e344d44');
 
     _timer = Timer.periodic(
-      const Duration(hours: 1),
+      const Duration(minutes: 30),
           (Timer t) => _requestNews,
     );
 

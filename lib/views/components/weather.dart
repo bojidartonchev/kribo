@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:kribo/generated/l10n.dart';
 import 'package:weather/weather.dart';
 
@@ -40,7 +39,7 @@ class _WeatherComponentState extends State<WeatherComponent> {
   }
 
   void _requestWeather() async {
-    var w = await _weatherFactory.currentWeatherByCityName('Sofia');
+    var w = await _weatherFactory.currentWeatherByCityName('Haskovo');
     setState((){
       _weather = w;
     });

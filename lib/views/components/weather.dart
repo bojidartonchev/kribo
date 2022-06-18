@@ -23,7 +23,9 @@ class _WeatherComponentState extends State<WeatherComponent> {
 
     _timer = Timer.periodic(
       const Duration(minutes: 1),
-          (Timer t) => _requestWeather,
+          (Timer t){
+            _requestWeather();
+          },
     );
 
     _requestWeather();

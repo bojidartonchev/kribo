@@ -25,7 +25,9 @@ class _NewsComponentState extends State<NewsComponent> {
 
     _timer = Timer.periodic(
       const Duration(minutes: 30),
-          (Timer t) => _requestNews,
+          (Timer t){
+            _requestNews();
+          },
     );
 
     _requestNews();

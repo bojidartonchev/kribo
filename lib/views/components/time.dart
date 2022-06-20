@@ -46,18 +46,15 @@ class _TimeComponentState extends State<TimeComponent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(formattedDate, style: const TextStyle(fontSize: 30)),
-          RichText(
-              text: TextSpan(
-                text: formattedTime,
-                style: const TextStyle(fontSize: 60),
-                children: <InlineSpan>[
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.top,
-                  child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 13),
-                      child: Text(_now.second.toString().padLeft(2, '0'), style: const TextStyle(fontSize: 30)))),
-                ],
-              )),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(formattedTime, style: const TextStyle(fontSize: 60)),
+              Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                  child: Text(_now.second.toString().padLeft(2, '0'), style: const TextStyle(fontSize: 30)))
+            ],
+          ),
         ]
       ),
     );
